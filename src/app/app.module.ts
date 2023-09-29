@@ -34,7 +34,7 @@ import { ResetPassComponent } from './Components/reset-pass/reset-pass.component
     SignupComponent,
     ForgotPasswordComponent,
     ResetCodeComponent,
-    ResetPassComponent
+    ResetPassComponent,
   ],
   imports: [
     BrowserModule,

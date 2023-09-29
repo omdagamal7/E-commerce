@@ -38,7 +38,7 @@
           <ul class="nav navbar gap-2 py-0 justify-content-end">
             <li class=" curser-pointer nav-item " routerLink="/login" *ngIf="!loggedIn"><a>Log-in</a></li>
             <li class=" curser-pointer nav-item " routerLink="/signup" *ngIf="!loggedIn"><a>Sign-up</a></li>
-            <!-- <button class="btn border-0" *ngIf="loggedIn" (click)="profileOpen()"><img src="assets/profile.png" alt=""></button>
+            <button class="btn border-0" *ngIf="loggedIn" (click)="profileOpen()"><img src="assets/profile.png" alt=""></button>
             <div class="p-4 shadow profile position-absolute top-100 end-0 bg-light" *ngIf="loggedIn"  [class]="profileToggle ? 'show' : ''">
               <img src="assets/profile.png" alt="" class="profile-img mb-5 d-block mx-auto">
               <div class="mb-5 bg-white rounded-5 p-3">
@@ -47,7 +47,7 @@
                 <h5 class="d-flex gap-2 align-items-center">Role:<p class="m-0 fw-normal text-muted h6">{{userData.role}}</p></h5>
               </div>
               <button class="btn btn-outline-primary d-block mx-auto" (click)="logOut()"><li class=" curser-pointer nav-item " routerLink="/login" ><a>Log-out</a></li></button>
-            </div> -->
+            </div>
           </ul> 
         </ul>
       </div>
