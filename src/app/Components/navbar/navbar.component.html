@@ -1,0 +1,56 @@
+<nav class=" fixed-top bg-light">
+  <div class="container py-2  position-relative">
+    <div class="d-flex align-items-center">
+      <div class="logo me-4">
+        <a href="/"><img src="../../../assets/freshcart-logo.svg" alt=""></a>
+      </div>
+      <div class="d-flex d-lg-none flex-grow-1 justify-content-end"><button class="btn btn-outline-primary" (click)="dropDown()"><i class="fa-solid fa-bars"></i></button></div>
+      <div class="navigation d-flex justify-content-between flex-grow-1" [class]="!navToggle ? 'show-nav' : ''">
+        <ul class=" nav navbar routers gap-3 py-0 main-nav bg-light  rounded " *ngIf="loggedIn" >
+          <li class=" curser-pointer nav-item mx-2 active" routerLink="/home" routerLinkActive="activated"><a class=" w-100 h-100 d-block text-color text-decoration-none position-relative">Home</a></li>
+          <li class=" curser-pointer nav-item mx-2 active" routerLink="/cart" routerLinkActive="activated"><a class=" w-100 h-100 d-block text-color text-decoration-none position-relative">Cart</a></li>
+          <li class=" curser-pointer nav-item mx-2 active" routerLink="/products" routerLinkActive="activated"><a class=" w-100 h-100 d-block text-color text-decoration-none position-relative">Products</a></li>
+          <li class=" curser-pointer nav-item mx-2 active" routerLink="/categories" routerLinkActive="activated"><a class=" w-100 h-100 d-block text-color text-decoration-none position-relative">Categories</a></li>
+          <li class=" curser-pointer nav-item mx-2 active" routerLink="/brands" routerLinkActive="activated"><a class=" w-100 h-100 d-block text-color text-decoration-none position-relative">Brands</a></li>
+          <li class=" curser-pointer nav-item mx-2 active" routerLink="/setting" routerLinkActive="activated"><a class=" w-100 h-100 d-block text-color text-decoration-none position-relative">setting</a></li>
+        </ul>
+        <ul class=" nav navbar gap-3 endUl bg-light flex-grow-1 justify-content-end" >
+          <div class="d-flex align-items-center gap-3" *ngIf="loggedIn" >
+            <div>
+              <button class="btn btn-primary rounded-circle btn-sm" (click)="socialToggle()">
+                <i class="fa-solid fa-globe"></i>
+              </button>
+              <ul class=" gap-2 list-unstyled justify-content-end social border rounded-4 bg-light p-2 " [class]="(navToggle && socialDropDown) ? 'show' : ''">
+                <li class=" curser-pointer nav-item d-flex gap-3 mb-2 rounded-3 align-items-center justify-content-center instagram"><i class="fa-brands fs-4 text-white fa-instagram"></i><p class="m-0 flex-grow-1 text-center">instagram</p></li>
+                <li class=" curser-pointer nav-item d-flex gap-3 my-2 rounded-3 align-items-center justify-content-center facebook"><i class="fa-brands fs-4 text-white fa-facebook-f"></i><p class="m-0 flex-grow-1 text-center">facebook</p></li>
+                <li class=" curser-pointer nav-item d-flex gap-3 my-2 rounded-3 align-items-center justify-content-center twitter"><i class="fa-brands fs-4 text-white fa-twitter"></i><p class="m-0 flex-grow-1 text-center">Twitter</p></li>
+                <li class=" curser-pointer nav-item d-flex gap-3 my-2 rounded-3 align-items-center justify-content-center linked-in"><i class="text-white fs-4 fa-brands fa-linkedin-in"></i><p class="m-0 flex-grow-1 text-center">Linkedin-in</p></li>
+                <li class=" curser-pointer nav-item d-flex gap-3 mt-2 rounded-3 align-items-center justify-content-center youtube"><i class="fa-brands fs-4 text-white fa-youtube"></i><p class="m-0 flex-grow-1 text-center">Youtube</p></li>
+              </ul>
+            </div>
+            <div class=" nav-item position-relative" routerLink="login">
+              <a class=" text-decoration-none">
+                <i class="fa fa-cart-shopping text-primary fs-4"></i>
+                <div class="text-white position-absolute badge-cus bg-main "><span></span></div>
+              </a>
+            </div>
+          </div>
+          <ul class="nav navbar gap-2 py-0 justify-content-end">
+            <li class=" curser-pointer nav-item " routerLink="/login" *ngIf="!loggedIn"><a>Log-in</a></li>
+            <li class=" curser-pointer nav-item " routerLink="/signup" *ngIf="!loggedIn"><a>Sign-up</a></li>
+            <button class="btn border-0" *ngIf="loggedIn" (click)="profileOpen()"><img src="assets/profile.png" alt=""></button>
+            <div class="p-4 shadow profile position-absolute top-100 end-0 bg-light" *ngIf="loggedIn"  [class]="profileToggle ? 'show' : ''">
+              <img src="assets/profile.png" alt="" class="profile-img mb-5 d-block mx-auto">
+              <div class="mb-5 bg-white rounded-5 p-3">
+                <h5 class="d-flex gap-2 align-items-center mb-4">Name:<p class="m-0 fw-normal text-muted h6">{{userData.name}}</p></h5>
+                <h5 class="d-flex gap-2 align-items-center mb-4">Id:<p class="m-0 fw-normal text-muted h6">{{userData.id}}</p></h5>
+                <h5 class="d-flex gap-2 align-items-center">Role:<p class="m-0 fw-normal text-muted h6">{{userData.role}}</p></h5>
+              </div>
+              <button class="btn btn-outline-primary d-block mx-auto" (click)="logOut()"><li class=" curser-pointer nav-item " routerLink="/login" ><a>Log-out</a></li></button>
+            </div>
+          </ul> 
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

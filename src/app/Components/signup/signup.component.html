@@ -1,0 +1,72 @@
+<div class="container py-5">
+  <div class="row gx-0 ">
+    <div class="col-lg-5 col-md-6 hero ">
+      <div class="layer text-center py-5 px-xl-5 px-3">
+        <h2 class="text-white h1 my-5">Sign-up</h2>
+        <div class="rounded-pill google bg-white d-flex align-items-center justify-content-between mb-3 p-3 curser-pointer">
+          <img src="assets/signUp/google-icon-2048x2048-czn3g8x8.png" class="icon" alt="google icon">
+          <h5 class="flex-grow-1 text-center m-0">Continue With Google</h5>
+        </div>
+        <div class="rounded-pill facebook text-white d-flex align-items-center justify-content-between p-3 curser-pointer">
+          <i class="fa-brands fa-facebook-f h4 m-0"></i>
+          <h5 class="flex-grow-1 text-center m-0">Continue With Google</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7 col-md-6 form p-5">
+      <div class="alert alert-danger w-100" *ngIf="alreadyExist">
+        <div class="fs-4">
+          {{alreadyExist}}
+        </div>
+      </div>
+      <form class="pt-4" [formGroup]="signUpForm" (ngSubmit)="signedUp(signUpForm)">
+        <div class="form-group position-relative mb-4  rounded-pill w-100 bg-light">
+          <input type="text" [class]="signUpForm.get('name')?.errors && (signUpForm.get('name')?.dirty || isInvalid) ? 'inputError' : '' " class="control rounded-pill w-100" placeholder="Your Name" formControlName="name" name="name">
+          <p class="placeHolder position-absolute m-0" [class]="signUpForm.get('name')?.errors && (signUpForm.get('name')?.dirty || isInvalid) ? 'inputErrorPLaceholder' : '' ">Your Name</p>
+          <div class="position-absolute fa-regular fa-circle-xmark text-danger" *ngIf="signUpForm.get('name')?.errors && (signUpForm.get('name')?.dirty || isInvalid)">
+            <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="signUpForm.get('name')?.getError('required')">Your Name Is Required<i class="fa-solid fa-caret-down text-danger"></i></p>  
+            <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="signUpForm.get('name')?.getError('minlength')">Must More Than 3<i class="fa-solid fa-caret-down text-danger"></i></p>  
+            <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="signUpForm.get('name')?.getError('maxlength')">Must Be less Than 18<i class="fa-solid fa-caret-down text-danger"></i></p>  
+          </div>
+        </div>
+        <div class="form-group position-relative mb-4 rounded-pill w-100 bg-light">
+          <input type="email" [class]="signUpForm.get('email')?.errors && (signUpForm.get('email')?.dirty || isInvalid) ? 'inputError' : '' " class="control rounded-pill w-100" placeholder="Your Email" formControlName="email" name="email">
+          <p class="placeHolder position-absolute m-0" [class]="signUpForm.get('email')?.errors && (signUpForm.get('email')?.dirty || isInvalid) ? 'inputErrorPLaceholder' : '' ">Your Email</p>
+          <div class="position-absolute fa-regular fa-circle-xmark text-danger" *ngIf="signUpForm.get('email')?.errors && (signUpForm.get('email')?.dirty || isInvalid)">
+            <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="signUpForm.get('email')?.getError('required')">Your Email Is Required<i class="fa-solid fa-caret-down text-danger"></i></p>  
+            <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="signUpForm.get('email')?.getError('email')">Your Email Is Wrong<i class="fa-solid fa-caret-down text-danger"></i></p>  
+          </div>
+        </div>
+        <div class="form-group position-relative mb-4 rounded-pill w-100 bg-light">
+          <input type="tel" [class]="signUpForm.get('phone')?.errors && (signUpForm.get('phone')?.dirty || isInvalid) ? 'inputError' : '' " class="control rounded-pill w-100" placeholder=" Your Phone Number " formControlName="phone" name="phone">
+          <p class="placeHolder position-absolute m-0" [class]="signUpForm.get('phone')?.errors && (signUpForm.get('phone')?.dirty || isInvalid) ? 'inputErrorPLaceholder' : ''">Your Phone Number</p>
+          <div class="position-absolute fa-regular fa-circle-xmark text-danger" *ngIf="signUpForm.get('phone')?.errors &&  (signUpForm.get('phone')?.dirty || isInvalid)">
+            <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="signUpForm.get('phone')?.getError('required')">Your Phone Is Required<i class="fa-solid fa-caret-down text-danger"></i></p>  
+            <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="signUpForm.get('phone')?.getError('pattern')">Your Phone Is Wrong<i class="fa-solid fa-caret-down text-danger"></i></p>  
+          </div>
+        </div>
+        <div class="form-group position-relative mb-4 rounded-pill w-100 bg-light">
+          <input type="password" [class]="signUpForm.get('password')?.errors && (signUpForm.get('password')?.dirty || isInvalid) ? 'inputError' : '' " class="control rounded-pill w-100" placeholder="Your Password" formControlName="password" name="password">
+          <p class="placeHolder position-absolute m-0" [class]="signUpForm.get('password')?.errors && (signUpForm.get('password')?.dirty || isInvalid) ? 'inputErrorPLaceholder' : '' ">Your Password</p>
+          <div class="position-absolute fa-regular fa-circle-xmark text-danger" *ngIf="signUpForm.get('password')?.errors && (signUpForm.get('password')?.dirty || isInvalid)">
+            <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="signUpForm.get('password')?.getError('required')">Your Password Is Required<i class="fa-solid fa-caret-down text-danger"></i></p>  
+            <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x " *ngIf="signUpForm.get('password')?.getError('pattern')">Start With Only Capital Letter<i class="fa-solid fa-caret-down text-danger"></i></p>  
+          </div>
+        </div>
+        <div class="form-group position-relative mb-4 rounded-pill w-100">
+          <input type="password" class="control rounded-pill w-100 bg-light" [class]="signUpForm.get('rePassword')?.errors && (signUpForm.get('rePassword')?.dirty || isInvalid) ? 'inputError' : '' " placeholder="Confirm Your Password" formControlName="rePassword" name="rePassword">
+          <p class="placeHolder position-absolute m-0" [class]="signUpForm.get('rePassword')?.errors && (signUpForm.get('rePassword')?.dirty || isInvalid) ? 'inputErrorPLaceholder' : '' ">Confirm Your Password</p>
+          <div class="position-absolute fa-regular fa-circle-xmark text-danger" *ngIf="signUpForm.get('rePassword')?.errors && (signUpForm.get('rePassword')?.dirty || isInvalid)">
+            <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="signUpForm.get('rePassword')?.getError('required')">Confirm Password Is Required<i class="fa-solid fa-caret-down text-danger"></i></p>  
+            <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="signUpForm.get('rePassword')?.getError('matching')">Dose't match the password<i class="fa-solid fa-caret-down text-danger"></i></p>  
+          </div>
+        </div>
+        <button class="btn btn-primary rounded-pill px-5 py-2 d-block mx-auto">
+          <i *ngIf="loader" class="fa fa-spin fa-spinner fs-5"></i>
+          <span *ngIf="!loader">Sign-up <i class="fa-solid fa-arrow-right-long m0"></i></span>
+        </button>
+      </form>
+    </div>
+  </div>
+  <p-toast></p-toast>
+</div>

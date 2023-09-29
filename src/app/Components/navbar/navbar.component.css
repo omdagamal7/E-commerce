@@ -1,0 +1,138 @@
+.logo img {
+
+  width: 9rem;
+
+}
+
+
+.active a::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  color: white !important;
+  height: 3px;
+  width: 0;
+  border-radius: 62.4375rem;
+  background-color: var(--main-color);
+  transition: all .5s;
+}
+.activated a::before {
+  width: 100%;
+}
+
+.social {
+  width: 50%;
+  position: absolute;
+  top: 100%;
+  right: 20%;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+}
+
+.social li {
+  padding: 1rem;
+}
+.social p {
+  font-size: 1.5rem;
+}
+.facebook {
+  background-color: #1877f2;
+}
+.twitter {
+  background-color: #1da1f2;
+}
+.youtube {
+  background-color: #ff0000;
+}
+.linked-in {
+  background-color: #0a66c2;
+}
+.instagram {
+  background-image: linear-gradient(to bottom left, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
+}
+
+
+
+
+@media (width <= 992px) {
+  .dis-none {
+    display: none !important;
+  }
+  .navigation {
+    position: absolute;
+    left: 0;
+    top: 200%;
+    width: 100%;
+    display: block !important;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+    border-bottom: 2px solid var(--main-color);
+  }
+  .show-nav {
+    top: 100%;
+    visibility: visible;
+    opacity: 1;
+  }
+  .navigation > ul:first-child {
+    display: block !important;
+  }
+  .endUl{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    padding-bottom: 20px;
+  }
+  .social {
+    right: 10%;
+    width: 90%;
+  }
+  .main-nav {
+    padding-top: 20px;
+  }
+  .main-nav li {
+    text-align: center;
+    padding: 10px 0;
+  }
+  .main-nav a {
+    display: inline !important;
+  }
+}
+
+
+button img {
+  width: 2.3rem;
+}
+.profile-img {
+  width: 7rem;
+}
+
+
+.profile {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.show {
+  visibility: visible;
+  opacity: 1;
+}

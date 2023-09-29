@@ -1,0 +1,145 @@
+
+
+
+@media (850px <= width <= 1400px) {
+  .container  {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.form {
+box-shadow: 5px 0 8px 2px rgba(200, 200, 200, .4);
+}
+@media( width <= 992px ) {
+  .fa-circle-xmark p  {
+    left: unset !important;
+    transform: unset !important;
+    right: -30px !important;
+  }
+  .fa-circle-xmark p  i {
+    left: unset !important;
+    transform: unset !important;
+    right: 30px !important;
+  }
+  .form {
+    box-shadow: 0 5px 8px 2px rgba(200, 200, 200, .4);
+    }
+}
+
+  .inputError {
+    border: 1px solid #ed5f74 !important;
+  }
+  .inputErrorPLaceholder {
+    color: #ed5f74 !important;
+  }
+.form-group:hover input {
+  border-color: var(--main-color);
+}
+.control {
+  padding: .75rem 1.2rem;
+  border: 1px solid;
+  border-color: transparent;
+  outline: none;
+  transition: all .3s;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+.control:focus  {
+  border-color: var(--main-color);
+  background-color: white;
+  overflow: visible;
+}
+.control::placeholder  {
+  transition: all .5s;
+}
+.control:focus::placeholder  {
+  opacity: 0;
+}
+.placeHolder {
+  padding: 0 4px;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all .3s;
+  z-index: 1;
+  color: #aaa;
+  opacity: 0;
+}
+
+.control:focus + .placeHolder {
+  opacity: 1;
+  top: 0;
+  transform: translateY(-55%);
+  color: var(--main-color);
+  font-size: 1.1rem;
+  background-color: white;
+  z-index: 3;
+}
+
+.hero {
+  background-image: url('../../../assets/signUp/wallpaperflare.com_wallpaper.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.layer {
+  background-color: rgba(0, 0, 0, .2);
+  width: 100%;
+  height: 100%;
+}
+
+.icon{
+  width: 2rem;
+}
+.facebook {
+  background-color: #1877f2;
+  height: 3rem;
+}
+.google {
+
+  height: 3rem;
+}
+
+.fa-circle-xmark {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  right: .7rem;
+}
+.fa-circle-xmark p {
+  transition: all .3s;
+  position: relative;
+  text-align: center;
+}
+.fa-circle-xmark p i {
+  font-size: 2rem;
+  position: absolute;
+  left: 50%;
+  top: calc(100% - 12px);
+  transform: translateX(-50%);
+}
+.alert {
+  font-size: .7rem;
+  letter-spacing: 2px;
+  width: 21rem;
+}
+
+@media (width <= 500px) {
+  .alert {
+    width: 14rem;
+    font-size: .5rem;
+    line-height: 1.5;
+  }
+}
+@media (1380px <= width <= 1500px) {
+  .alert {
+    width: 15rem;
+    font-size: .5rem;
+    line-height: 1.5;
+  }
+
+}

@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+
+body {
+  padding-top: 100px;
+}
+:root {
+  --main-color: #0d6efd;
+  --second-color: #438eff;
+  --third-color: #359fd8;
+}
+.curser-pointer {
+  cursor: pointer;
+}
+
+.p-toast-summary,.p-toast-detail {
+  font-size: 1.2rem !important;
+}
+@media (width <= 600px) {
+  .p-toast-summary,
+  .p-toast-detail,
+  .p-toast-icon {
+    font-size: .8rem !important;
+  }
+  .p-toast-message {
+    margin-left: auto;
+    width: 18.75rem;
+  }
+}
