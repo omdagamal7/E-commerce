@@ -26,7 +26,7 @@ export class LoginComponent {
     private _router: Router,
     private _messageService: MessageService
     ) {}
-    show(message: string) {
+    show(message:string) {
       this._messageService.add({ severity: 'error', summary: 'Error', detail: message });
   }
 
