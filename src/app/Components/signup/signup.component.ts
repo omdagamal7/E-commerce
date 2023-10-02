@@ -7,7 +7,7 @@ import { AuthService } from 'src/core/Services/auth.service';
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: [
-    '../css/login&signupStyle.css',
+    '../css/authenticationStyle.css',
     './signup.component.css'
   ],
   providers: [MessageService]

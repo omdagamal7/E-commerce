@@ -7,7 +7,7 @@ import { AuthService } from 'src/core/Services/auth.service';
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
   styleUrls: [
-    '../css/login&signupStyle.css',
+    '../css/authenticationStyle.css',
     './forgot-password.component.css'
   ]
 })

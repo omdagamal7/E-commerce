@@ -6,9 +6,9 @@
 
     <form [formGroup]="resetPass" (ngSubmit)="resetCode(resetPass)">
       <div class="form-group position-relative mb-5 rounded-pill w-100 bg-light">
-        <input type="number" [class]="resetPass.get('resetCode')?.errors && (resetPass.get('resetCode')?.touched || isInvalid )? 'inputError' : '' " class="control rounded-pill w-100" placeholder="Your resetCode" formControlName="resetCode" name="resetCode">
+        <input type="number" [class]="resetPass.get('resetCode')?.errors && (resetPass.get('resetCode')?.touched || isInvalid )? 'inputError' : '' " class="control rounded-pill w-100" placeholder="Verif Code" formControlName="resetCode" name="resetCode">
         <p class="placeHolder position-absolute m-0" [class]="resetPass.get('resetCode')?.errors && (resetPass.get('resetCode')?.touched || isInvalid ) ? 'inputErrorPLaceholder' : '' ">Your Code</p>
-        <div class="position-absolute fa fa-circle-info text-danger" *ngIf="resetPass.get('resetCode')?.errors && (resetPass.get('resetCode')?.touched || isInvalid )">
+        <div class="position-absolute fa-regular fa-circle-xmark text-danger" *ngIf="resetPass.get('resetCode')?.errors && (resetPass.get('resetCode')?.touched || isInvalid )">
           <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="resetPass.get('resetCode')?.getError('required')">Your Code Is Required<i class="fa-solid fa-caret-down text-danger"></i></p>  
         </div>
         <div *ngIf="message" class="alert alert-success">

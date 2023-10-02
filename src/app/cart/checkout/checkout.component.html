@@ -1,0 +1,33 @@
+<div class="container py-5 width-35">
+  <div class="form p-5">
+    <form [formGroup]="checkoutForm" (ngSubmit)="checkOut(checkoutForm)">
+      <div class="form-group position-relative mb-4 rounded-pill w-100 bg-light ">
+        <input type="text" [class]="checkoutForm.get('details')?.errors && (checkoutForm.get('details')?.touched || invalid) ? 'inputError' : '' " class="control rounded-pill w-100" placeholder="Details" name="details" formControlName="details">
+        <p [class]="checkoutForm.get('details')?.errors && (checkoutForm.get('details')?.touched || invalid) ? 'inputErrorPLaceholder' : '' " class="placeHolder  position-absolute m-0">Details</p>
+        <div class="position-absolute fa-regular fa-circle-xmark text-danger" *ngIf="checkoutForm.get('details')?.errors && (checkoutForm.get('details')?.touched || invalid )">
+          <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="checkoutForm.get('details')?.getError('required')">Your details Is Required<i class="fa-solid fa-caret-down text-danger"></i></p>  
+        </div>
+      </div>
+      <div class="form-group position-relative mb-4 rounded-pill w-100 bg-light ">
+        <input type="tel" [class]="checkoutForm.get('phone')?.errors && (checkoutForm.get('phone')?.touched || invalid) ? 'inputError' : '' " class="control rounded-pill w-100" placeholder="Phone" name="phone" formControlName="phone">
+        <p  class="placeHolder  position-absolute m-0" [class]="checkoutForm.get('phone')?.errors && (checkoutForm.get('phone')?.touched || invalid) ? 'inputErrorPLaceholder' : '' ">Phone</p>
+        <div class="position-absolute fa-regular fa-circle-xmark text-danger" *ngIf="checkoutForm.get('phone')?.errors && (checkoutForm.get('phone')?.touched || invalid )">
+          <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="checkoutForm.get('phone')?.getError('required')">Your phone Is Required<i class="fa-solid fa-caret-down text-danger"></i></p>  
+          <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="checkoutForm.get('phone')?.getError('minlength')">Must Be More Than 10<i class="fa-solid fa-caret-down text-danger"></i></p>  
+          <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="checkoutForm.get('phone')?.getError('minlength')">Must Be Less Than 12<i class="fa-solid fa-caret-down text-danger"></i></p>  
+        </div>
+      </div>
+      <div class="form-group position-relative mb-4 rounded-pill w-100 bg-light ">
+        <input [class]="checkoutForm.get('city')?.errors && (checkoutForm.get('city')?.touched || invalid) ? 'inputError' : '' " type="text" placeholder="City" class="control rounded-pill w-100" name="city" formControlName="city">
+        <p  [class]="checkoutForm.get('city')?.errors && (checkoutForm.get('city')?.touched || invalid) ? 'inputErrorPLaceholder' : '' " class="placeHolder  position-absolute m-0">City</p>
+        <div class="position-absolute fa-regular fa-circle-xmark text-danger" *ngIf="checkoutForm.get('city')?.errors && (checkoutForm.get('city')?.touched || invalid)">
+          <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="checkoutForm.get('city')?.getError('required')">Your City Is Required<i class="fa-solid fa-caret-down text-danger"></i></p>  
+        </div>
+      </div>
+      <button class="btn px-3 py-2 btn-primary fs-5 rounded-pill d-block mx-auto">
+        <span *ngIf="!loader">Check Out</span>
+        <i *ngIf="loader" class=" fa fa-spin fa-spinner"></i>
+      </button>
+    </form>
+  </div>
+</div>

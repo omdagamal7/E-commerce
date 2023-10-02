@@ -1,0 +1,14 @@
+
+
+
+.form {
+  height: 400px;
+  box-shadow: 0 0 20px 5px rgba(200, 200, 200, .3);
+}
+
+
+@media (992px <= width) {
+  .width-35 {
+    width: 35%;
+  }
+}

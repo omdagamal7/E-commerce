@@ -2,10 +2,16 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 
-
-body {
-  padding-top: 100px;
-}
+  @media (992px <= width) {
+    body {
+      padding-top: 80.8px;
+    }
+  }
+  @media (width <= 992px) {
+    body {
+      padding-top: 54px;
+    }
+  }
 :root {
   --main-color: #0d6efd;
   --second-color: #438eff;
@@ -15,7 +21,7 @@ body {
   cursor: pointer;
 }
 
-.p-toast-summary,.p-toast-detail {
+.p-toast-summary {
   font-size: 1.2rem !important;
 }
 @media (width <= 600px) {
@@ -28,4 +34,39 @@ body {
     margin-left: auto;
     width: 18.75rem;
   }
+}
+
+.owl-nav {
+  margin-top: 10px ;
+  display: flex ;
+  justify-content: space-between ;
+  align-items: center ;
+  position: absolute ;
+  top: 40% ;
+  transform: translateY(-50%);
+  left: -5%;
+  right: -5%;
+}
+@media (width <= 992px) {
+  .owl-nav {
+    display: none;
+  }
+}
+.owl-prev, .owl-next {
+  background-color: transparent !important;
+
+}
+.owl-prev i, .owl-next i {
+  color: #cccccc8e;
+  font-size: 3.125rem;
+  font-weight: 600;
+}
+.owl-dot span {
+  background-color: #cccccc8e !important;
+}
+.owl-dot.active span {
+  background-color: var(--main-color) !important;
+}
+.fa-star {
+  color: gold;
 }

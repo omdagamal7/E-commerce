@@ -1,0 +1,36 @@
+<div class="container  width-35">
+  <div class="form p-5">
+      <form class="pt-4" [formGroup]="changeDataForm" (ngSubmit)="changed(changeDataForm)">
+    <div class="form-group position-relative mb-4 rounded-pill w-100 bg-light">
+      <input type="text" [class]="changeDataForm.get('name')?.errors && (changeDataForm.get('name')?.dirty || isInvalid) ? 'inputError' : '' " class="control rounded-pill w-100" placeholder=" Your Name " formControlName="name" name="name">
+      <p class="placeHolder position-absolute m-0" [class]="changeDataForm.get('name')?.errors && (changeDataForm.get('name')?.dirty || isInvalid) ? 'inputErrorPLaceholder' : ''">New Name</p>
+      <div class="position-absolute fa-regular fa-circle-xmark text-danger" *ngIf="changeDataForm.get('name')?.errors && (changeDataForm.get('name')?.dirty || isInvalid)">
+        <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="changeDataForm.get('name')?.getError('required')">Your Name Is Required<i class="fa-solid fa-caret-down text-danger"></i></p>  
+        <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="changeDataForm.get('name')?.getError('minlength')">Must More Than 3<i class="fa-solid fa-caret-down text-danger"></i></p>  
+        <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="changeDataForm.get('name')?.getError('maxlength')">Must Be less Than 18<i class="fa-solid fa-caret-down text-danger"></i></p>  
+      </div>
+    </div>
+    <div class="form-group position-relative mb-4 rounded-pill w-100 bg-light">
+      <input type="email" [class]="changeDataForm.get('email')?.errors && (changeDataForm.get('email')?.dirty || isInvalid) ? 'inputError' : '' " class="control rounded-pill w-100" placeholder="Your Email" formControlName="email" name="email">
+      <p class="placeHolder position-absolute m-0" [class]="changeDataForm.get('email')?.errors && (changeDataForm.get('email')?.dirty || isInvalid) ? 'inputErrorPLaceholder' : '' ">New email</p>
+      <div class="position-absolute fa-regular fa-circle-xmark text-danger" *ngIf="changeDataForm.get('email')?.errors && (changeDataForm.get('email')?.dirty || isInvalid)">
+        <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="changeDataForm.get('email')?.getError('required')">Your Email Is Required<i class="fa-solid fa-caret-down text-danger"></i></p>  
+        <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="changeDataForm.get('email')?.getError('email')">Your Email Is Wrong<i class="fa-solid fa-caret-down text-danger"></i></p>  
+      </div>
+    </div>
+    <div class="form-group position-relative mb-4 rounded-pill w-100">
+      <input type="tel" class="control rounded-pill w-100 bg-light" [class]="changeDataForm.get('phone')?.errors && (changeDataForm.get('phone')?.dirty || isInvalid) ? 'inputError' : '' " placeholder="Your Phone" formControlName="phone" name="phone">
+      <p class="placeHolder position-absolute m-0" [class]="changeDataForm.get('phone')?.errors && (changeDataForm.get('phone')?.dirty || isInvalid) ? 'inputErrorPLaceholder' : '' ">Your Phone</p>
+      <div class="position-absolute fa-regular fa-circle-xmark text-danger" *ngIf="changeDataForm.get('phone')?.errors &&  (changeDataForm.get('phone')?.dirty || isInvalid)">
+        <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="changeDataForm.get('phone')?.getError('required')">Your Phone Is Required<i class="fa-solid fa-caret-down text-danger"></i></p>  
+        <p class="alert alert-danger position-absolute bottom-100 start-50 d-block translate-middle-x" *ngIf="changeDataForm.get('phone')?.getError('pattern')">Your Phone Is Wrong<i class="fa-solid fa-caret-down text-danger"></i></p>  
+      </div>
+    </div>
+    <button class="btn btn-primary rounded-pill px-5 py-2 d-block mx-auto">
+      <i *ngIf="loader" class="fa fa-spin fa-spinner fs-5"></i>
+      <span *ngIf="!loader">Sign-up <i class="fa-solid fa-arrow-right-long m0"></i></span>
+    </button>
+  </form>
+  </div>
+  <p-toast></p-toast>
+</div>

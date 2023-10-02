@@ -28,8 +28,8 @@
                 <li class=" curser-pointer nav-item d-flex gap-3 mt-2 rounded-3 align-items-center justify-content-center youtube"><i class="fa-brands fs-4 text-white fa-youtube"></i><p class="m-0 flex-grow-1 text-center">Youtube</p></li>
               </ul>
             </div>
-            <div class=" nav-item position-relative" routerLink="login">
-              <a class=" text-decoration-none">
+            <div class=" nav-item position-relative" >
+              <a class=" text-decoration-none curser-pointer" routerLink="/cart">
                 <i class="fa fa-cart-shopping text-primary fs-4"></i>
                 <div class="text-white position-absolute badge-cus bg-main "><span></span></div>
               </a>
@@ -46,6 +46,8 @@
                 <h5 class="d-flex gap-2 align-items-center mb-4">Id:<p class="m-0 fw-normal text-muted h6">{{userData.id}}</p></h5>
                 <h5 class="d-flex gap-2 align-items-center">Role:<p class="m-0 fw-normal text-muted h6">{{userData.role}}</p></h5>
               </div>
+              <a class="nav-link text-primary py-0 curser-pointer" routerLink="changeUserData" (click)="profileToggle = false">Change Data</a>
+              <a class="nav-link text-primary  mb-3 curser-pointer" routerLink="changePassword" (click)="profileToggle = false">Change Password</a>
               <button class="btn btn-outline-primary d-block mx-auto" (click)="logOut()"><li class=" curser-pointer nav-item " routerLink="/login" ><a>Log-out</a></li></button>
             </div>
           </ul> 

@@ -14,11 +14,6 @@
       </div>
     </div>
     <div class="col-lg-7 col-md-6 form p-5">
-      <div class="alert alert-danger w-100" *ngIf="alreadyExist">
-        <div class="fs-4">
-          {{alreadyExist}}
-        </div>
-      </div>
       <form class="pt-4" [formGroup]="signUpForm" (ngSubmit)="signedUp(signUpForm)">
         <div class="form-group position-relative mb-4  rounded-pill w-100 bg-light">
           <input type="text" [class]="signUpForm.get('name')?.errors && (signUpForm.get('name')?.dirty || isInvalid) ? 'inputError' : '' " class="control rounded-pill w-100" placeholder="Your Name" formControlName="name" name="name">

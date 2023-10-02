@@ -7,7 +7,7 @@ import { AuthService } from 'src/core/Services/auth.service';
   selector: 'app-reset-pass',
   templateUrl: './reset-pass.component.html',
   styleUrls: [
-    '../css/login&signupStyle.css',
+    '../css/authenticationStyle.css',
     './reset-pass.component.css'
 ]
 })

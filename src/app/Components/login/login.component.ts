@@ -8,7 +8,7 @@ import { AuthService } from 'src/core/Services/auth.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: [
-    '../css/login&signupStyle.css',
+    '../css/authenticationStyle.css',
     './login.component.css'
   ],
   providers: [MessageService]
