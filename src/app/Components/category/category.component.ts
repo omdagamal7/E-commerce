@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Categories } from 'src/shared/interfaces/categories';

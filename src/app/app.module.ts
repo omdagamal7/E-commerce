@@ -27,7 +27,7 @@ import { LoaderComponent } from './Components/loader/loader.component';
 import { LoaderInterceptor } from '../shared/interceptors/loader.interceptor';
 import { TokenDirective } from './Components/navbar/token.directive';
 import { LoginWaysComponent } from './Components/login-ways/login-ways.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 
 
