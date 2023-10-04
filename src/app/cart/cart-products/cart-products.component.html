@@ -1,5 +1,5 @@
 
-<div class="container py-5 bg-light-cus rounded-4 overflow-hidden" *ngIf="cart?.data">
+<div class="container min-vh-100 py-5 bg-light-cus rounded-4 overflow-hidden" *ngIf="cart?.data">
   <h2 class="bg-primary m-0 text-white text-center py-3 rounded-top-4">Cart Details</h2>
   <div class="p-4 bg-light">
     <div class="row gy-3 mb-5">
@@ -17,7 +17,7 @@
           <p class="mb-0">{{product.price | currency : 'EGP '}}</p>
           <p class="mb-0"><i class="fa-solid fa-star text-gold"></i> {{product.product.ratingsAverage}}</p>
         </div>
-        <button class="btn bg-transparent text-danger px-0" ><i class="fa-regular fa-trash-can"></i> Remove</button>
+        <button class="btn bg-transparent text-danger px-0" (click)="removeProduct(product.product.id)"><i class="fa-regular fa-trash-can"></i> Remove</button>
       </div>
       <div class="order-sm-2 m-0 px-4 order-md-0 col-sm-4 col-md-3 offset-md-1 col-lg-2 offset-lg-1 text-center  d-flex align-products-center">
         <div class="d-flex justify-content-between flex-grow-1 w-75 mx-auto align-items-center">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-lg me-3 my-3 d-block ms-auto text-white bg-primary">
+    <button class="btn btn-lg me-3 my-3 d-block ms-auto text-white bg-primary" *ngIf="cart.data.products.length != 0">
         <a [routerLink]="['/checkout',cart.data._id]" class=" nav-link">
         Continue to Payment
       </a>

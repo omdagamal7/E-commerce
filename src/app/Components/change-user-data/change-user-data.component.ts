@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { AuthService } from 'src/core/Services/auth.service';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { CartService } from 'src/app/cart/shared/services/cart.service';
 
 @Component({
   selector: 'app-change-user-data',
@@ -27,7 +28,7 @@ export class ChangeUserDataComponent {
       private _authServices: AuthService,
       private _router: Router,
       private _messageService: MessageService,
-      private _navBar: NavbarComponent
+      private _navBar: NavbarComponent,
       ) {}
       show(message: string) {
         this._messageService.add({ severity: 'error', summary: 'Error', detail: message });
@@ -51,7 +52,12 @@ export class ChangeUserDataComponent {
             }
           },
           complete: () => {
-            this._router.navigate(['/home'])
+              this._authServices.userData.subscribe(
+                res => this._navBar.userData = res
+                
+              )
+              this._authServices.getUserData()
+              this._router.navigate(['/home'])
           }
     })
   }

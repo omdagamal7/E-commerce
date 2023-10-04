@@ -1,5 +1,7 @@
-<div class="container  width-35">
-  <div class="form p-5">
+<div class=" min-vh-100">
+
+  <div class="container  width-35">
+    <div class="form p-5">
       <form class="pt-4" [formGroup]="changeDataForm" (ngSubmit)="changed(changeDataForm)">
     <div class="form-group position-relative mb-4 rounded-pill w-100 bg-light">
       <input type="text" [class]="changeDataForm.get('name')?.errors && (changeDataForm.get('name')?.dirty || isInvalid) ? 'inputError' : '' " class="control rounded-pill w-100" placeholder=" Your Name " formControlName="name" name="name">
@@ -28,9 +30,10 @@
     </div>
     <button class="btn btn-primary rounded-pill px-5 py-2 d-block mx-auto">
       <i *ngIf="loader" class="fa fa-spin fa-spinner fs-5"></i>
-      <span *ngIf="!loader">Sign-up <i class="fa-solid fa-arrow-right-long m0"></i></span>
+      <span *ngIf="!loader">Done</span>
     </button>
   </form>
   </div>
   <p-toast></p-toast>
 </div>
+  </div>

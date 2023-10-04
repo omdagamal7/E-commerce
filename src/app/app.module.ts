@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastModule } from 'primeng/toast';
+import { BadgeModule } from 'primeng/badge';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { HomeComponent } from './Components/home/home.component';
-import { CategoriesComponent } from './Components/categories/categories.component';
 import { CategoryComponent } from './Components/category/category.component';
-import { BrandsComponent } from './Components/brands/brands.component';
-import { ProductsComponent } from './Components/products/products.component';
 import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
@@ -22,7 +20,14 @@ import { ResetPassComponent } from './Components/reset-pass/reset-pass.component
 import { ChangeUserDataComponent } from './Components/change-user-data/change-user-data.component';
 import { SliderComponent } from './Components/slider/slider.component';
 import { ProductItemComponent } from './Components/product-item/product-item.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
+import { SearchPipe } from 'src/shared/pipes/search.pipe';
+import { ProductDetailsComponent } from './Components/product-details/product-details.component';
+import { HttpInterceptor } from '../shared/interceptors/http.interceptor';
+import { LoaderComponent } from './Components/loader/loader.component';
+import { LoaderInterceptor } from '../shared/interceptors/loader.interceptor';
+import { TokenDirective } from './Components/navbar/token.directive';
+import { LoginWaysComponent } from './Components/login-ways/login-ways.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -32,10 +37,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    CategoriesComponent,
     CategoryComponent,
-    BrandsComponent,
-    ProductsComponent,
     LoginComponent,
     SignupComponent,
     ForgotPasswordComponent,
@@ -45,7 +47,12 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ChangeUserDataComponent,
     SliderComponent,
     ProductItemComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    SearchPipe,
+    LoaderComponent,
+    TokenDirective,
+    LoginWaysComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,9 +62,21 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     BrowserModule,
     BrowserAnimationsModule,
     ToastModule,
-    CarouselModule
+    CarouselModule,
+    FormsModule,
+    BadgeModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptor,
+      multi: true
+    },  {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true,
+  },
+  ],
   bootstrap: [AppComponent],
 
 })

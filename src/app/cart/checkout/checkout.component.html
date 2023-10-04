@@ -1,5 +1,7 @@
-<div class="container py-5 width-35">
-  <div class="form p-5">
+<div class=" min-vh-100">
+
+  <div class="container py-5 width-35">
+    <div class="form p-5">
     <form [formGroup]="checkoutForm" (ngSubmit)="checkOut(checkoutForm)">
       <div class="form-group position-relative mb-4 rounded-pill w-100 bg-light ">
         <input type="text" [class]="checkoutForm.get('details')?.errors && (checkoutForm.get('details')?.touched || invalid) ? 'inputError' : '' " class="control rounded-pill w-100" placeholder="Details" name="details" formControlName="details">
@@ -31,3 +33,4 @@
     </form>
   </div>
 </div>
+  </div>

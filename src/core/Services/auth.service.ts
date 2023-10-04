@@ -43,17 +43,9 @@ export class AuthService {
     return this._httpClient.put(`${this.baseURL}/api/v1/auth/resetPassword`,data)
   }
   changePassword(data: any) : Observable<any> {
-    return this._httpClient.put(`${this.baseURL}/api/v1/users/changeMyPassword`,data ,{
-      headers: {
-        token: `${localStorage.getItem('token')}`
-      }
-    })
+    return this._httpClient.put(`${this.baseURL}/api/v1/users/changeMyPassword`,data)
   }
   changeUserData(data: any) : Observable<any> {
-    return this._httpClient.put(`${this.baseURL}/api/v1/users/updateMe/`,data ,{
-      headers: {
-        token: `${localStorage.getItem('token')}`
-      }
-    })
+    return this._httpClient.put(`${this.baseURL}/api/v1/users/updateMe/`,data )
   }
 }

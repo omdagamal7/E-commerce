@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Details } from 'src/shared/interfaces/details';
 import { ProductsService } from 'src/shared/services/products.service';
-import { CartService } from '../cart/shared/services/cart.service';
 import { MessageService } from 'primeng/api';
+import { CartService } from 'src/app/cart/shared/services/cart.service';
 
 @Component({
   selector: 'app-product-details',

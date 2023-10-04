@@ -1,0 +1,37 @@
+@media (992px <= width) {
+  .container-fluid {
+    padding: 0 150px;
+  }
+}
+
+.fa-caret-down {
+  top: calc(100% - 15px);
+}
+.title p {
+  transition: all .3s;
+  visibility: hidden;
+  opacity: 0;
+}
+.title:hover p {
+  visibility: visible;
+  opacity: 1;
+}
+.title {
+  font-size: 18px ;
+}
+.box {
+  transition: all .3s;
+  border: transparent 1px solid ;
+}
+.box:hover {
+  border-color:var(--main-color) ;
+}
+.cart {
+  right: -100%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: .4s;
+}
+.box:hover .cart {
+  right: 1rem;
+}

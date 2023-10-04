@@ -119,7 +119,11 @@ button img {
 }
 
 
-
+.badge {
+  font-size: 12px;
+  bottom: 60%;
+  right: -50%;
+}
 
 .show {
   visibility: visible;

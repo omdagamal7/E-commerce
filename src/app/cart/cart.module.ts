@@ -24,6 +24,7 @@ import { OrdersComponent } from './orders/orders.component';
     ReactiveFormsModule,
     HttpClientModule,
     ToastModule
-  ]
+  ],
+
 })
 export class CartModule { }

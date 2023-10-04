@@ -1,0 +1,19 @@
+.img {
+  width: 3.75rem;
+}
+
+@media (width <= 1200px) {
+
+  .images {
+    justify-content: start !important;
+  }
+}
+
+.bn46 {
+  width: 9.375rem;
+  height: 3.125rem;
+}
+.bn45 {
+  width: 10.625rem;
+  height: 3.125rem;
+}
