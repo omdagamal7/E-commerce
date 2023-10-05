@@ -6,7 +6,7 @@
         <app-login-ways></app-login-ways>
       </div>
     </div>
-    <div class="col-lg-7 col-md-6 form p-5">
+    <div class="col-lg-7 col-md-6 form  p-3 p-sm-5">
       <form class="pt-4" [formGroup]="signUpForm" (ngSubmit)="signedUp(signUpForm)">
         <div class="form-group position-relative mb-4  rounded-pill w-100 bg-light">
           <input type="text" [class]="signUpForm.get('name')?.errors && (signUpForm.get('name')?.dirty || isInvalid) ? 'inputError' : '' " class="control rounded-pill w-100" placeholder="Your Name" formControlName="name" name="name">
