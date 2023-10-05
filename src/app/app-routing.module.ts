@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'products',canActivate:[authGuard], loadComponent: () => import('./Components/products/products.component').then(c => c.ProductsComponent), title: 'Products'},
   {path: 'cart',canActivate:[authGuard], loadChildren: () => import('./cart/cart.module').then(c => c.CartModule), title: 'Products'},
   {path: 'checkout/:id', canActivate:[authGuard], component: CheckoutComponent, title: 'Check Out'},
-  {path: 'allorders', canActivate:[authGuard], component: OrdersComponent, title: 'All Orders'},
+  {path: 'allorders', canActivate:[authGuard], loadComponent: () => import('./cart/orders/orders.component').then(c => c.OrdersComponent), title: 'All Orders'},
   {path: 'details/:id',canActivate:[authGuard],component:ProductDetailsComponent, title: 'Details'},
   {path: 'wishlist',canActivate:[authGuard], loadComponent: () => import('./Components/wish-list/wish-list.component').then(c => c.WishListComponent), title: 'Wish List'},
   {path: 'changePassword',canActivate:[authGuard],component:ChangePasswordComponent, title: 'Change Your Password'},

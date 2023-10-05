@@ -4,6 +4,7 @@ import { Details } from 'src/shared/interfaces/details';
 import { ProductsService } from 'src/shared/services/products.service';
 import { MessageService } from 'primeng/api';
 import { CartService } from 'src/app/cart/shared/services/cart.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-product-details',
@@ -36,5 +37,21 @@ export class ProductDetailsComponent implements OnInit {
     this._cartService.addProduct(productId).subscribe({
       next: res =>  this.show(res.message)
     })
+  }
+    customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: true,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      }
+    },
+    autoplay: true,
+    nav: true
   }
 }

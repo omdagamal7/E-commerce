@@ -9,7 +9,7 @@ import { FilterProductPipe } from './shared/pipes/filter-product.pipe';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OrdersComponent } from './orders/orders.component';
-
+import { AccordionModule } from 'primeng/accordion';
 @NgModule({
   declarations: [
     CartComponent,
@@ -23,7 +23,8 @@ import { OrdersComponent } from './orders/orders.component';
     CartRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastModule
+    ToastModule,
+    AccordionModule,
   ],
 
 })

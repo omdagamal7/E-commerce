@@ -1,7 +1,16 @@
-<div class="container min-vh-100">
+<div class="container min-vh-100 py-5">
   <div class="row align-items-center" *ngIf="details">
     <div class="col-md-4" >
-      <img [src]="details.imageCover" class="w-100" alt="">
+      <div class="images">
+        <owl-carousel-o [options]="customOptions">
+          
+          <ng-template carouselSlide *ngFor="let img of details.images">
+            <img [src]="img" class="w-100" alt="">
+          </ng-template>
+
+        </owl-carousel-o>
+      </div>
+      <!-- <img [src]="details.imageCover" class="w-100" alt=""> -->
     </div>
     <div class="col-md-8">
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">

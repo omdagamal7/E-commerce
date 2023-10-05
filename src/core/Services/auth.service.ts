@@ -19,7 +19,6 @@ export class AuthService {
   getUserData () {
     let encode = JSON.stringify(localStorage.getItem('token'))
     let decode = jwtDecode(encode)
-    console.log('decode: ', decode);
     this.userData.next(decode)
   }
 

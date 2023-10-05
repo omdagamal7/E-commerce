@@ -129,3 +129,11 @@ button img {
   visibility: visible;
   opacity: 1;
 }
+
+
+
+@media (1200px <= width <= 1240px) {
+  nav {
+    max-width: 100% !important;
+  }
+}

@@ -1,1 +1,52 @@
-<p>orders works!</p>
+<div class="container min-vh-100 py-5">
+  <p-accordion>
+    <p-accordionTab  *ngFor="let order of orders, let i = index" [header]="'Order '+(i+1)">
+      <div class="row gy-4">
+        <div class="col-lg-3 col-md-4" *ngFor="let item of order.cartItems" >
+          
+          <div class=" p-3 rounded-4 bg-light shadow box overflow-hidden position-relative " *ngIf="item">
+              <a class="text-reset text-decoration-none">
+              <img if [src]="item.product.imageCover" class="w-100 mb-3" alt="">
+              <div class="mb-1 d-flex justify-content-between align-items-center position-relative">
+                <p class="m-0 text-primary">{{item.product.category.name}}</p>
+                <p class="m-0 text-primary" >{{item.product.brand.name}}</p>
+              </div>
+              <h5 class="mb-3 position-relative title d-flex justify-content-between align-items-center" >
+                {{item.product.title.split(' ').splice(0,2).join(' ')+'...'}}
+                <p class=" position-absolute alert alert-primary z-3 bottom-100">
+                  {{item.product.title}}
+                  <i class="fa-solid fa-caret-down position-absolute start-50 translate-middle-x fs-1 text-primary"></i>
+                </p>
+                Count: {{item.count}}
+              </h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <h6 class="fw-semibold">{{item.price | currency : 'EGP '}}</h6>
+                <h6 class="fw-semibold"><i class="fa-solid fa-star"></i> {{item.product.ratingsAverage}}</h6>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </p-accordionTab>
+  </p-accordion>
+  
+</div>
+
+
+<!-- <div class="accordion" id="accordionExample">
+  <div class="accordion-item" *ngFor="let order of orders">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div class="row">
+          <div class="col-sm-4 col-md-3">
+          </div>
+        </div>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div> -->
