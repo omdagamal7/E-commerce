@@ -12,7 +12,6 @@ import { ChangePasswordComponent } from './Components/change-password/change-pas
 import { ChangeUserDataComponent } from './Components/change-user-data/change-user-data.component';
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
 import { CheckoutComponent } from './cart/checkout/checkout.component';
-import { OrdersComponent } from './cart/orders/orders.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 
