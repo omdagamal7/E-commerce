@@ -8,15 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FilterProductPipe } from './shared/pipes/filter-product.pipe';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { OrdersComponent } from './orders/orders.component';
-import { AccordionModule } from 'primeng/accordion';
+
 @NgModule({
   declarations: [
     CartComponent,
     CartProductsComponent,
     FilterProductPipe,
     CheckoutComponent,
-    OrdersComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +22,6 @@ import { AccordionModule } from 'primeng/accordion';
     ReactiveFormsModule,
     HttpClientModule,
     ToastModule,
-    AccordionModule,
   ],
 
 })

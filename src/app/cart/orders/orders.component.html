@@ -1,6 +1,6 @@
 <div class="container min-vh-100 py-5">
   <p-accordion>
-    <p-accordionTab  *ngFor="let order of orders, let i = index" [header]="'Order '+(i+1)">
+    <p-accordionTab  *ngFor="let order of orders, let i = index" [header]="'Order '+(i + 1)">
       <div class="row gy-4">
         <div class="col-lg-3 col-md-4" *ngFor="let item of order.cartItems" >
           
@@ -17,7 +17,7 @@
                   {{item.product.title}}
                   <i class="fa-solid fa-caret-down position-absolute start-50 translate-middle-x fs-1 text-primary"></i>
                 </p>
-                Count: {{item.count}}
+                count: {{item.count}}
               </h5>
               <div class="d-flex justify-content-between align-items-center">
                 <h6 class="fw-semibold">{{item.price | currency : 'EGP '}}</h6>
