@@ -28,6 +28,7 @@ import { LoaderInterceptor } from '../shared/interceptors/loader.interceptor';
 import { TokenDirective } from './Components/navbar/token.directive';
 import { LoginWaysComponent } from './Components/login-ways/login-ways.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 
 
@@ -53,6 +54,7 @@ import { FooterComponent } from './Components/footer/footer.component';
     TokenDirective,
     LoginWaysComponent,
     FooterComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -32,7 +32,7 @@ export class CategoryComponent {
         0: {
           items: 1
         },
-        200: {
+        250: {
           items: 2
         },
         400: {

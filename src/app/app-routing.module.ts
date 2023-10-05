@@ -13,6 +13,7 @@ import { ChangeUserDataComponent } from './Components/change-user-data/change-us
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
 import { CheckoutComponent } from './cart/checkout/checkout.component';
 import { OrdersComponent } from './cart/orders/orders.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'resetCode',canActivate:[registrationGuard], component:ResetCodeComponent, title: 'Code'},
   {path: 'resetpass', canActivate:[registrationGuard], component:ResetPassComponent, title: 'Reset Password'},
   {path: 'signup', canActivate:[registrationGuard], component:SignupComponent, title: 'Sign-up'},
+  {path: '**', canActivate:[authGuard], component:NotFoundComponent, title: '404'},
 ];
 
 @NgModule({

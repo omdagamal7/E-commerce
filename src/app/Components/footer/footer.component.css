@@ -17,3 +17,32 @@
   width: 10.625rem;
   height: 3.125rem;
 }
+
+
+@media (width <= 450px) {
+  .bn46 {
+    width: 6.375rem;
+    height: 2.125rem;
+  }
+  .bn45 {
+    width: 6.625rem;
+    height: 2.125rem;
+  }
+  .img {
+    width: 2.5rem;
+  }
+}
+
+@media (width <= 270px) {
+  .payment h4, .deliveries h4 {
+    font-size: 1rem;
+  }
+  .buttons {
+    display: block !important;
+  }
+  .buttons img {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    display: block !important;
+  }
+}
