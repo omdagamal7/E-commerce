@@ -62,6 +62,9 @@
 .owl-dot span {
   background-color: #cccccc8e !important;
 }
+.owl-dots {
+  padding-top: 15px;
+}
 .owl-dot.active span {
   background-color: var(--main-color) !important;
 }
