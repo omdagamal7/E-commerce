@@ -23,7 +23,7 @@ export class LoaderInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       finalize(() => setTimeout(() => {
         this._loaderService.hide()
-      }, 400))
+      }, 600))
     )
   }
 }
