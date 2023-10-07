@@ -22,3 +22,9 @@
 .sony {
   width: 6.25rem !important;
 }
+
+@media (width <= 512px) {
+  .slider {
+    height: 80vh;
+  }
+}

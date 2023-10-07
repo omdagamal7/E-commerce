@@ -5,6 +5,7 @@ import { ProductsService } from 'src/shared/services/products.service';
 import { MessageService } from 'primeng/api';
 import { CartService } from 'src/app/cart/shared/services/cart.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { WishListService } from 'src/shared/services/wish-list.service';
 
 @Component({
   selector: 'app-product-details',
@@ -14,10 +15,12 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class ProductDetailsComponent implements OnInit {
   productId: string = '';
+  addedToWishlist = this._wishListService.addedToWishlist
   details!: Details;
   constructor(
     private _productsService: ProductsService,
     private _cartService: CartService,
+    private _wishListService: WishListService,
     private _activatedRoute: ActivatedRoute,
     private _messageService:MessageService
   ) {}
@@ -38,6 +41,24 @@ export class ProductDetailsComponent implements OnInit {
       next: res =>  this.show(res.message)
     })
   }
+  addToWishlist(id: string) {
+    this._wishListService.addToWishList(id).subscribe({
+      next: res => {
+        this.show(res.message)
+        this._wishListService.numOfWishlistItems.next(res.data.length)
+        this.addedToWishlist = this._wishListService.addedToWishlist
+      }
+    })
+  }
+  removeFromWishlist(id: string) {
+        this._wishListService.removeFromWishList(id).subscribe({
+          next: res => {
+            this.show(res.message)
+            this._wishListService.numOfWishlistItems.next(res.data.length)
+            this.addedToWishlist = false
+          }
+        })
+    }
     customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,

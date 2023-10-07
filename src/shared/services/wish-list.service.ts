@@ -7,6 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class WishListService {
   numOfWishlistItems: BehaviorSubject<number> = new BehaviorSubject(0)
+  addedToWishlist = false
   constructor(private _httpClient: HttpClient) {
     this.getNumOfWishlistItems()
   }
@@ -16,6 +17,7 @@ export class WishListService {
     })
   }
   addToWishList(id: string): Observable<any> {
+    this.addedToWishlist = true
     return this._httpClient.post(`https://ecommerce.routemisr.com/api/v1/wishlist`,{
       productId: id,
     });

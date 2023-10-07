@@ -25,7 +25,10 @@
         <p class=" fw-semibold"><i class="fa-solid fa-star"></i> {{details.ratingsAverage}}</p>
       </div>
 
-      <p class=" fw-bold">Sold : {{details.sold}}</p>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <p class=" fw-bold mb-0">Sold : {{details.sold}}</p>
+        <i class="fa-regular fa-heart fa-2x curser-pointer trn-3" [class]="addedToWishlist ? 'fa-solid text-danger' : '' " (click)="addedToWishlist ? removeFromWishlist(details.id) : addToWishlist(details.id) "></i>
+      </div>
       <p class="text-muted h4 mb-3">{{details.description}}</p>
       <button (click)="addToCart(productId)" class="btn btn-outline-primary w-100">Add to cart +</button>
     </div>
