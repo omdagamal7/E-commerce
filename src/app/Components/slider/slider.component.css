@@ -40,4 +40,7 @@
   .title p {
     font-size: 14px;
   }
+  .offset-lg-4 {
+    width: 50% !important;
+  }
 }
