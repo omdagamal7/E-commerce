@@ -18,8 +18,9 @@ export class LoaderInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     console.log('request: ', request);
     if (!request.body && request.method != "DELETE") {
-      
-      this._loaderService.show()
+      setTimeout(() => {
+        this._loaderService.show()
+      }, 400);
     }
     return next.handle(request).pipe(
       finalize(() => this._loaderService.hide())
