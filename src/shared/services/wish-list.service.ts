@@ -1,15 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class WishListService {
+export class WishListService implements OnInit {
   numOfWishlistItems: BehaviorSubject<number> = new BehaviorSubject(0)
   addedToWishlist = false
   constructor(private _httpClient: HttpClient) {
+  }
+  ngOnInit(): void {
     this.getNumOfWishlistItems()
+    
   }
   getNumOfWishlistItems() {
     this.getWishList().subscribe({

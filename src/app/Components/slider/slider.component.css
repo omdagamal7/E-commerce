@@ -22,25 +22,3 @@
 .sony {
   width: 6.25rem !important;
 }
-
-@media (width <= 512px) {
-  .slider {
-    height: 80vh;
-  }
-  .title h3 {
-    font-size: 1.5625rem;
-  }
-  .title i {
-    font-size: 2.125rem;
-  }
-  .title img {
-    width: 2.125rem;
-    margin: 0 auto;
-  }
-  .title p {
-    font-size: 14px;
-  }
-  .offset-lg-4 {
-    width: 50% !important;
-  }
-}
