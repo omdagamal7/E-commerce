@@ -28,12 +28,7 @@ export class OrdersComponent implements OnInit {
       next: res => {
         this.orders = res
       },
-      error: err => console.log(err),
-      complete: () => {
-        this.orders.forEach(order => {
-          this.data = []
-        })
-      }
+      error: err => console.log(err)
     })
   }
 }

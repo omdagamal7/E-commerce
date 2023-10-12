@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
   socialDropDown: boolean = false;
   profileToggle: boolean = false;
   loggedIn: boolean = false
-  userData: UserData = {} as UserData;
+  userData!: UserData;
   numberOfItems!: string;
   wishlistCount!: string
   constructor (
