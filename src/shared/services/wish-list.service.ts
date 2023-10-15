@@ -5,16 +5,16 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class WishListService implements OnInit {
+export class WishListService {
   numOfWishlistItems: BehaviorSubject<number> = new BehaviorSubject(0)
   addedToWishlist = false
   constructor(private _httpClient: HttpClient) {
-  }
-  ngOnInit(): void {
     this.getNumOfWishlistItems()
-    
+
   }
   getNumOfWishlistItems() {
+    console.log('done');
+    
     this.getWishList().subscribe({
       next: res => this.numOfWishlistItems.next(res.count)
     })

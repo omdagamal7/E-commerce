@@ -29,17 +29,31 @@ export class NavbarComponent implements OnInit {
     private _cartService: CartService,
     private _wishListService: WishListService
     ) {
-
+    }
+    ngAfterViewInit(): void {
+    
+      if ( window.innerWidth < 992 ) {
+        document.querySelectorAll('.main-nav li a').forEach(e => {
+          e.addEventListener('click', e => {
+            this.dropDown()
+          })
+        })
+        
+      }
     }
   ngOnInit(): void {
+
+
     this._cartService.numberOfItems.subscribe(
       (res) => this.numberOfItems = `${res}`
     )
+
     if (localStorage.getItem('token') != null) {
       this.loggedIn = true;
     } else {
       this.loggedIn = false;
     }
+
     this._authService.userData.subscribe(res => {
       this.userData = res
       if (this._authService.userData.getValue()) {
@@ -48,8 +62,13 @@ export class NavbarComponent implements OnInit {
         this.loggedIn = false
       }
     })
+
     this._wishListService.numOfWishlistItems.subscribe(
-      res => this.wishlistCount = `${res}`
+      res => {
+        this.wishlistCount = `${res}`
+        console.log(res);
+        
+      }
     )
 }
 
