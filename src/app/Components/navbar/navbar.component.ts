@@ -3,9 +3,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { UserData } from 'src/core/InterFaces/userData';
 import { AuthService } from 'src/core/Services/auth.service';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-import { CartProductsComponent } from 'src/app/cart/cart-products/cart-products.component';
-import { BadgeDirective } from 'primeng/badge';
 import { CartService } from 'src/app/cart/shared/services/cart.service';
 import { WishListService } from 'src/shared/services/wish-list.service';
 
