@@ -1,8 +1,4 @@
-@media (992px <= width) {
-  .container-fluid {
-    padding: 0 150px;
-  }
-}
+
 
 .fa-caret-down {
   top: calc(100% - 15px);

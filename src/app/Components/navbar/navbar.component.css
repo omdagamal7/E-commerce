@@ -132,8 +132,8 @@ button img {
 
 
 
-@media (1200px <= width <= 1240px) {
+/* @media (1200px <= width <= 1240px) {
   nav {
     max-width: 100% !important;
   }
-}
+} */
