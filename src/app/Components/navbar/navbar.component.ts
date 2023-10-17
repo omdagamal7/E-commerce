@@ -28,11 +28,19 @@ export class NavbarComponent implements OnInit {
     ) {
     }
     ngAfterViewInit(): void {
-    
+      if (window.innerWidth > 992) {
+        document.querySelectorAll('.profile a, .social a').forEach(e => {
+          e.addEventListener('click', e => {
+            this.profileOpen()
+            this.socialToggle ()
+          })
+        })
+      }
       if ( window.innerWidth < 992 ) {
-        document.querySelectorAll('.main-nav li a').forEach(e => {
+        document.querySelectorAll('a').forEach(e => {
           e.addEventListener('click', e => {
             this.dropDown()
+
           })
         })
         
@@ -53,6 +61,7 @@ export class NavbarComponent implements OnInit {
 
     this._authService.userData.subscribe(res => {
       this.userData = res
+      console.log('res: ', res);
       if (this._authService.userData.getValue()) {
         this.loggedIn = true;
       } else {

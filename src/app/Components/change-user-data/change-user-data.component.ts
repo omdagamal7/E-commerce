@@ -3,8 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { AuthService } from 'src/core/Services/auth.service';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { CartService } from 'src/app/cart/shared/services/cart.service';
+import { UserData } from 'src/core/InterFaces/userData';
 
 @Component({
   selector: 'app-change-user-data',
@@ -15,12 +14,11 @@ import { CartService } from 'src/app/cart/shared/services/cart.service';
 ],
   providers: [
     MessageService,
-    NavbarComponent
   ]
 })
 export class ChangeUserDataComponent {
 
-  
+    userData!: UserData
     isInvalid = false
     loader = false
     constructor (
@@ -28,7 +26,6 @@ export class ChangeUserDataComponent {
       private _authServices: AuthService,
       private _router: Router,
       private _messageService: MessageService,
-      private _navBar: NavbarComponent,
       ) {}
       show(message: string) {
         this._messageService.add({ severity: 'error', summary: 'Error', detail: message });
@@ -52,11 +49,14 @@ export class ChangeUserDataComponent {
             }
           },
           complete: () => {
-              this._authServices.userData.subscribe(
-                res => this._navBar.userData = res
-                
-              )
-              this._authServices.getUserData()
+
+              let token = localStorage.getItem('token')
+              localStorage.removeItem('token')
+              localStorage.setItem('token', JSON.stringify(token))
+              this._authServices.userData.subscribe(res => {
+                this.userData = res
+                console.log('res: ', res);
+              })
               this._router.navigate(['/home'])
           }
     })
