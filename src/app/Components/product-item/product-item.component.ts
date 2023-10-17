@@ -13,7 +13,7 @@ import { WishListService } from 'src/shared/services/wish-list.service';
 })
 export class ProductItemComponent implements OnInit {
   products!: Products[];
-  searchKey: string = ''
+  searchKey: string = '';
   constructor (
     private _productsService:ProductsService,
     private _wishListService:WishListService,

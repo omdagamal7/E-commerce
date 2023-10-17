@@ -49,10 +49,6 @@ export class ChangeUserDataComponent {
             }
           },
           complete: () => {
-
-              let token = localStorage.getItem('token')
-              localStorage.removeItem('token')
-              localStorage.setItem('token', JSON.stringify(token))
               this._authServices.userData.subscribe(res => {
                 this.userData = res
                 console.log('res: ', res);
