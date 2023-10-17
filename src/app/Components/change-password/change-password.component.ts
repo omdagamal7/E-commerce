@@ -44,7 +44,6 @@ export class ChangePasswordComponent {
     if (form.valid) {
       this.loader = true
       this._authServices.changePassword(form.value).subscribe({
-        next: res => console.log(res),
         error: err => {
           this.loader = false,
           this.show(err.error.message)

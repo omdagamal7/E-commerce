@@ -61,7 +61,6 @@ export class NavbarComponent implements OnInit {
 
     this._authService.userData.subscribe(res => {
       this.userData = res
-      console.log('res: ', res);
       if (this._authService.userData.getValue()) {
         this.loggedIn = true;
       } else {
@@ -72,7 +71,6 @@ export class NavbarComponent implements OnInit {
     this._wishListService.numOfWishlistItems.subscribe(
       res => {
         this.wishlistCount = `${res}`
-        console.log(res);
         
       }
     )

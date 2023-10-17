@@ -40,15 +40,12 @@ export class WishListComponent implements OnInit {
     this._wishListService.removeFromWishList(id).subscribe({
       next: res => {
         this.show(res.message)
-        console.log('res: ', res);
 
       },
       error: err => console.log(err),
       complete: () => this._wishListService.getWishList().subscribe({
         next: res => {
-          console.log('res: ', res);
           this.wishList = res;
-          console.log(res.count);
           this._wishListService.numOfWishlistItems.next(res.count)
         }
       })
