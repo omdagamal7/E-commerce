@@ -30,7 +30,7 @@
           <button (click)="addProduct(product.id)" class="btn border-0 btn-primary w-100 d-block text-white fs-4">
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
-          <button class="btn border-0 btn-primary w-100 d-block text-white fs-4" (click)="addToWishList(product.id)" >
+          <button class="btn border-0 btn-primary w-100 d-block text-white fs-4 addToWishList " *ngIf="!addedToWishlist" (click)="addToWishList(product.id)" >
             <i class="fa-solid fa-heart"></i>
           </button>
         </div>

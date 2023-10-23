@@ -55,7 +55,7 @@ export class ProductDetailsComponent implements OnInit {
           next: res => {
             this.show(res.message)
             this._wishListService.numOfWishlistItems.next(res.data.length)
-            this.addedToWishlist = false
+            this.addedToWishlist.next(false)
           }
         })
     }

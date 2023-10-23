@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class WishListService {
   numOfWishlistItems: BehaviorSubject<number> = new BehaviorSubject(0)
-  addedToWishlist = false
+  addedToWishlist : BehaviorSubject<boolean> = new BehaviorSubject(false)
   constructor(private _httpClient: HttpClient) {
     this.getNumOfWishlistItems()
 
@@ -20,7 +20,7 @@ export class WishListService {
     })
   }
   addToWishList(id: string): Observable<any> {
-    this.addedToWishlist = true
+    this.addedToWishlist.next(true)
     return this._httpClient.post(`https://ecommerce.routemisr.com/api/v1/wishlist`,{
       productId: id,
     });
@@ -29,6 +29,7 @@ export class WishListService {
     return this._httpClient.get('https://ecommerce.routemisr.com/api/v1/wishlist')
   }
   removeFromWishList(id: string): Observable<any> {
+    this.addedToWishlist.next(false)
     return this._httpClient.delete(`https://ecommerce.routemisr.com/api/v1/wishlist/${id}`);
   }
 }

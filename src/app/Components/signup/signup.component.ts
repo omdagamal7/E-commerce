@@ -35,7 +35,6 @@ export class SignupComponent implements OnInit {
       password: [null,[Validators.required,Validators.pattern(/^[A-Z][a-z0-9]{7,20}$/)]],
       rePassword: [null,[Validators.required,this.validateRePassword.bind(this)]]
     })
-
   }
 
   validateRePassword(control: FormControl) {
