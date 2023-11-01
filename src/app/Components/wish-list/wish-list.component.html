@@ -1,5 +1,8 @@
-
-<div class="container min-vh-100 py-5 bg-light-cus rounded-4 overflow-hidden" *ngIf="wishList">
+<div class="container text-center py-5" *ngIf="wishList.count == 0">
+  <h1 class="text-primary text-capitalize">your wish list is empty</h1>
+  <img src="../../../assets/Empty-rafiki.svg" class="w-50" alt="">
+</div>
+<div class="container min-vh-100 py-5 bg-light-cus rounded-4 overflow-hidden" *ngIf="wishList.count != 0">
   <h2 class="bg-primary m-0 text-white text-center py-3 rounded-top-4">Wish List</h2>
   <div class="p-4 bg-light">
     <div class="row mb-3 p-3 bg-white rounded-4" *ngFor="let product of wishList.data">

@@ -1,4 +1,7 @@
-
+<div class="container text-center py-5" *ngIf="!cart?.data">
+  <h1 class="text-primary">Your Cart is Empty</h1>
+  <img src="../../../assets/empty cart.avif" class="w-50" alt="">
+</div>
 <div class="container min-vh-100 py-5 bg-light-cus rounded-4 overflow-hidden" *ngIf="cart?.data">
   <h2 class="bg-primary m-0 text-white text-center py-3 rounded-top-4">Cart Details</h2>
   <div class="p-4 bg-light">
