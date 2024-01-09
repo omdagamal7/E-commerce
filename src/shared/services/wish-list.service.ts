@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,6 @@ export class WishListService {
 
   }
   getNumOfWishlistItems() {
-    console.log('done');
     
     this.getWishList().subscribe({
       next: res => this.numOfWishlistItems.next(res.count)
@@ -21,15 +21,15 @@ export class WishListService {
   }
   addToWishList(id: string): Observable<any> {
     this.addedToWishlist.next(true)
-    return this._httpClient.post(`https://ecommerce.routemisr.com/api/v1/wishlist`,{
+    return this._httpClient.post(`${environment.domain}/api/v1/wishlist`,{
       productId: id,
     });
   }
   getWishList(): Observable<any> {
-    return this._httpClient.get('https://ecommerce.routemisr.com/api/v1/wishlist')
+    return this._httpClient.get(`${environment.domain}/api/v1/wishlist`)
   }
   removeFromWishList(id: string): Observable<any> {
     this.addedToWishlist.next(false)
-    return this._httpClient.delete(`https://ecommerce.routemisr.com/api/v1/wishlist/${id}`);
+    return this._httpClient.delete(`${environment.domain}/api/v1/wishlist/${id}`);
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
@@ -26,6 +26,8 @@ export class LoginComponent {
     private _router: Router,
     private _messageService: MessageService
     ) {}
+
+
     show(message:string) {
       this._messageService.add({ severity: 'error', summary: 'Error', detail: message });
   }

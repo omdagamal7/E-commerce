@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CartService{
+export class CartService {
   numberOfItems: BehaviorSubject<number> = new BehaviorSubject(0)
   constructor(private _httpClient: HttpClient) {
     this.numberOfCartItems()

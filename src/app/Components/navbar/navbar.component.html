@@ -11,7 +11,6 @@
           <li class=" curser-pointer nav-item mx-2 active" routerLink="/cart" routerLinkActive="activated"><a class=" w-100 h-100 d-block text-color text-decoration-none position-relative">Cart</a></li>
           <li class=" curser-pointer nav-item mx-2 active" routerLink="/products" routerLinkActive="activated"><a class=" w-100 h-100 d-block text-color text-decoration-none position-relative">Products</a></li>
           <li class=" curser-pointer nav-item mx-2 active" routerLink="/categories" routerLinkActive="activated"><a class=" w-100 h-100 d-block text-color text-decoration-none position-relative">Categories</a></li>
-          <li class=" curser-pointer nav-item mx-2 active" routerLink="/brands" routerLinkActive="activated"><a class=" w-100 h-100 d-block text-color text-decoration-none position-relative">Brands</a></li>
           <li class=" curser-pointer nav-item mx-2 active" routerLink="/wishlist" routerLinkActive="activated"><a class=" w-100 h-100 d-block text-color text-decoration-none position-relative">Wishlist</a></li>
         </ul>
         <ul class=" nav navbar gap-3 endUl bg-light flex-grow-1 justify-content-end" >
@@ -41,8 +40,8 @@
             </a>
           </div>
           <ul class="nav navbar gap-2 py-0 justify-content-end">
-            <li class=" curser-pointer nav-item " routerLink="/login" *ngIf="!loggedIn"><a>Log-in</a></li>
-            <li class=" curser-pointer nav-item " routerLink="/signup" *ngIf="!loggedIn"><a>Sign-up</a></li>
+            <li class=" curser-pointer nav-item btn btn-outline-primary " routerLink="/login" *ngIf="!loggedIn"><a>Log-in</a></li>
+            <li class=" curser-pointer nav-item btn btn-outline-primary " routerLink="/signup" *ngIf="!loggedIn"><a>Sign-up</a></li>
             <button class="btn border-0 px-0" *ngIf="loggedIn" (click)="profileOpen()"><img src="assets/profile.png" alt=""></button>
             <div class="p-4 shadow profile position-absolute top-100 end-0 bg-light" *ngIf="loggedIn"  [class]="profileToggle ? 'show' : ''">
               <img src="assets/profile.png" alt="" class="profile-img mb-5 d-block mx-auto">

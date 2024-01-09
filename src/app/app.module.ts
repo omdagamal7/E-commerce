@@ -29,7 +29,8 @@ import { TokenDirective } from './Components/navbar/token.directive';
 import { LoginWaysComponent } from './Components/login-ways/login-ways.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
-``
+import { ButtonModule } from 'primeng/button';
+
 
 
 
@@ -66,7 +67,8 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
     ToastModule,
     CarouselModule,
     FormsModule,
-    BadgeModule
+    BadgeModule,
+    ButtonModule
   ],
   providers: [
     {

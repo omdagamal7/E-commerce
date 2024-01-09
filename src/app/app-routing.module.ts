@@ -19,7 +19,6 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full' ,},
   {path: 'home', canActivate:[authGuard], component:HomeComponent, title: 'home'},
   {path: 'categories', canActivate:[authGuard], loadComponent: () => import('./Components/categories/categories.component').then(c => c.CategoriesComponent), title: 'Categories'},
-  {path: 'brands', canActivate:[authGuard], loadComponent: () => import('./Components/brands/brands.component').then( c => c.BrandsComponent ), title: 'Brands'},
   {path: 'products',canActivate:[authGuard], loadComponent: () => import('./Components/products/products.component').then(c => c.ProductsComponent), title: 'Products'},
   {path: 'cart',canActivate:[authGuard], loadChildren: () => import('./cart/cart.module').then(c => c.CartModule), title: 'Products'},
   {path: 'checkout/:id', canActivate:[authGuard], component: CheckoutComponent, title: 'Check Out'},

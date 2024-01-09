@@ -48,6 +48,7 @@ export class ProductDetailsComponent implements OnInit {
         this._wishListService.numOfWishlistItems.next(res.data.length)
         this.addedToWishlist = this._wishListService.addedToWishlist
       }
+      
     })
   }
   removeFromWishlist(id: string) {

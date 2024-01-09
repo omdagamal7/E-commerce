@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import jwtDecode from 'jwt-decode';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  baseURL: string = 'https://ecommerce.routemisr.com';
   userData: BehaviorSubject<any> = new BehaviorSubject('')
   constructor(private _httpClient:HttpClient) { 
     if (localStorage.getItem('token')) {
@@ -23,28 +23,28 @@ export class AuthService {
   }
 
   SignUp(data: any): Observable<any> {
-    return this._httpClient.post(`${this.baseURL}/api/v1/auth/signup`,data)
+    return this._httpClient.post(`${environment.domain}/api/v1/auth/signup`,data)
   }
 
   logIn(data: any): Observable<any> {
-    return this._httpClient.post(`${this.baseURL}/api/v1/auth/signin`,data)
+    return this._httpClient.post(`${environment.domain}/api/v1/auth/signin`,data)
   }
 
   forgotPass(data: any): Observable<any> {
-    return this._httpClient.post(`${this.baseURL}/api/v1/auth/forgotPasswords`,data)
+    return this._httpClient.post(`${environment.domain}/api/v1/auth/forgotPasswords`,data)
   }
   verifyCode(data: any): Observable<any> {
-    return this._httpClient.post(`${this.baseURL}/api/v1/auth/verifyResetCode`,{
+    return this._httpClient.post(`${environment.domain}/api/v1/auth/verifyResetCode`,{
       "resetCode":`${data}`
     })
   }
   resetPass(data: any): Observable<any> {
-    return this._httpClient.put(`${this.baseURL}/api/v1/auth/resetPassword`,data)
+    return this._httpClient.put(`${environment.domain}/api/v1/auth/resetPassword`,data)
   }
   changePassword(data: any) : Observable<any> {
-    return this._httpClient.put(`${this.baseURL}/api/v1/users/changeMyPassword`,data)
+    return this._httpClient.put(`${environment.domain}/api/v1/users/changeMyPassword`,data)
   }
   changeUserData(data: any) : Observable<any> {
-    return this._httpClient.put(`${this.baseURL}/api/v1/users/updateMe/`,data )
+    return this._httpClient.put(`${environment.domain}/api/v1/users/updateMe/`,data )
   }
 }

@@ -29,8 +29,14 @@ export class WishListComponent implements OnInit {
       this._messageService.add({ severity: 'success', summary: 'Success', detail: message });
   }
   ngOnInit(): void {
+    console.log(1);
+    
     this._wishListService.getWishList().subscribe({
-      next: res => this.wishList = res
+      next: res => {
+        this.wishList = res;
+      console.log(this.wishList);
+      
+      }
     })
     this._wishListService.numOfWishlistItems.subscribe(
       res => this.numOfWishlistItems.next(res)
@@ -46,6 +52,8 @@ export class WishListComponent implements OnInit {
       complete: () => this._wishListService.getWishList().subscribe({
         next: res => {
           this.wishList = res;
+          console.log(this.wishList);
+          
           this._wishListService.numOfWishlistItems.next(res.count)
         }
       })
