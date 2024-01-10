@@ -26,3 +26,13 @@
 .box:hover {
   border-color:var(--main-color) ;
 }
+  p-accordion ::ng-deep .p-accordion-header-text {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    word-spacing: 11px;
+  }
+  p-accordion ::ng-deep .p-icon {
+    color: black;
+  }

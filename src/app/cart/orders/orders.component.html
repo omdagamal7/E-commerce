@@ -1,6 +1,6 @@
 <div class="container min-vh-100 py-5">
   <p-accordion>
-    <p-accordionTab  *ngFor="let order of orders" [header]="'City: '+ order.shippingAddress.city + ' , ' + 'Country: '+ order.shippingAddress.details + ' , ' + 'Total Price: '+'EGP '+order.totalOrderPrice+'.00'">
+    <p-accordionTab  *ngFor="let order of orders" [header]="'City: '+ order.shippingAddress.city + ' , ' + ' ' + 'Country: '+ order.shippingAddress.details + ' , ' + ' ' + 'Total Price: '+'EGP ' + order.totalOrderPrice+'.00'">
       <div class="row gy-4">
         <div class="col-lg-3 col-md-4" *ngFor="let item of order.cartItems" >
           
@@ -9,7 +9,6 @@
               <img if [src]="item.product.imageCover" class="w-100 mb-3" alt="">
               <div class="mb-1 d-flex justify-content-between align-items-center position-relative">
                 <p class="m-0 text-primary">{{item.product.category.name}}</p>
-                <p class="m-0 text-primary" >{{item.product.brand.name}}</p>
               </div>
               <h5 class="mb-3 position-relative title d-flex justify-content-between align-items-center" >
                 {{item.product.title.split(' ').splice(0,2).join(' ')+'...'}}
